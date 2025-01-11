@@ -1,5 +1,5 @@
 
-import prevHistoricData from "./historicdata.js"
+import prevHistoricData from "./historicData.js"
 export default async function Fetch(){
 
 
