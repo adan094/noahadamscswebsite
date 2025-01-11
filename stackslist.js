@@ -1,7 +1,7 @@
 export default [
     {
         text: "React",
-        src: "../images/reactlogo.svg",
+        src: `${import.meta.env.BASE_URL}images/reactlogo.svg`,
         alt: "React Logo"
     },
     {
