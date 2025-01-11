@@ -1,4 +1,4 @@
-import prevHistoricData from "../historicdata.js"
+import prevHistoricData from "../historicData.js"
 import ScorigamiCell from "./ScorigamiCell.jsx"
 import HeaderCell from "./HeaderCell.jsx"
 import { useState, useEffect } from 'react'
