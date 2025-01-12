@@ -1,47 +1,47 @@
 export default [
     {
         text: "React",
-        src: `${import.meta.env.BASE_URL}images/reactlogo.svg`,
+        src: `${import.meta.env.BASE_URL}src/reactlogo.svg`,
         alt: "React Logo"
     },
     {
         text: "HTML",
-        src: "../images/htmllogo.svg",
+        src: "./htmllogo.svg",
         alt: "HTML5 Logo"
     },
     {
         text: "CSS",
-        src: "../images/csslogo.svg",
+        src: "../src/csslogo.svg",
         alt: "CSS3 Logo"
     },
     {
         text: "JavaScript",
-        src: "../images/javascriptlogo.svg",
+        src: "../src/javascriptlogo.svg",
         alt: "JavaScript Logo"
     },
     {
         text: "SQL",
-        src: "../images/sqllogo.svg",
+        src: "../src/sqllogo.svg",
         alt: "SQL Logo"
     },
     {
         text: "C++",
-        src: "../images/c++logo.svg",
+        src: "../src/c++logo.svg",
         alt: "C++ Logo"
     },
     {
         text: "C",
-        src: "../images/clogo.svg",
+        src: "../src/clogo.svg",
         alt: "C Logo"
     },
     {
         text: "Java",
-        src: "../images/javalogo.svg",
+        src: "../src/javalogo.svg",
         alt: "Java Logo"
     },
     {
         text: "Python",
-        src: "../images/pythonlogo.svg",
+        src: "../src/pythonlogo.svg",
         alt: "Python Logo"
     }
 ]
