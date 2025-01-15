@@ -159,6 +159,16 @@ table
 {
   width:94%;
   justify-content: center;
+  font-size: min(1.2rem, 2vh);
+}
+
+@media (max-width:400px) {
+
+  section{
+    margin-left:0.7%;
+    margin-right:0.7%;
+  }
+
 }
 
 
