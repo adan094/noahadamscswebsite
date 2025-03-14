@@ -85,7 +85,7 @@ export default function Body(props)
             <div className="sectionElements">
               <div className="aboutText">
                 <p>Hello!</p>
-                <p>My name is Noah, welcome to my website! I am a software developer with a passion for web development, machine learning and backend development. Here you will find various projects that I have worked on. If you're interested in contacting me regarding a project or just want to talk I have also included my contact info below.</p>
+                <p>My name is Noah, welcome to my website! I am a software developer with a passion for web development, machine learning and backend development. Here you will find various projects that I have worked on. If you're interested in contacting me regarding a project or just want to talk, I have also included my contact info below.</p>
               </div>
               <div className= "imagesContainer">
                 {stackElements}
