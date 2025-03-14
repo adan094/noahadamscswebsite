@@ -1,8 +1,5 @@
-# React + Vite
+# Noah Adams CS Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Noah Adams CS is [Noah Adams'](https://github.com/adan094) personal website which acts as a place to demonstrate his web design and software engineering abilities to potential employers and/or clients. The Website is accessible via [https://noahadamscs.com/](https://noahadamscs.com/).
