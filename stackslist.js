@@ -43,5 +43,20 @@ export default [
         text: "Python",
         src: "./pythonlogo.svg",
         alt: "Python Logo"
+    },
+    {
+        text: "NodeJS",
+        src: "./nodejslogo.svg",
+        alt: "NodeJS Logo"
+    },
+    {
+        text: "JSON",
+        src: "./jsonlogo.svg",
+        alt: "JSON Logo"
+    },
+    {
+        text: "Git",
+        src: "./gitlogo.svg",
+        alt: "Git Logo"
     }
 ]
