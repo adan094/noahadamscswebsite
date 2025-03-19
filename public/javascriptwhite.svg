@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 256 256"
+   version="1.1"
+   preserveAspectRatio="xMidYMid"
+   fill="#000000"
+   id="svg3"
+   sodipodi:docname="javascriptlogo.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.97875"
+     inkscape:cx="400"
+     inkscape:cy="400"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="SVGRepo_iconCarrier" />
+  <g
+     id="SVGRepo_bgCarrier"
+     stroke-width="0" />
+  <g
+     id="SVGRepo_tracerCarrier"
+     stroke-linecap="round"
+     stroke-linejoin="round" />
+  <g
+     id="SVGRepo_iconCarrier">
+    <g
+       id="g3">
+      <path
+         d="M0,0 L256,0 L256,256 L0,256 L0,0  194.82563 116.15313 C 173.34438 116.15312 159.5975 129.90147 159.5975 147.945 C 159.5975 167.5355 171.11092 176.81466 188.46813 184.2025 L 194.48125 186.78188 C 205.4795 191.59183 212.00875 194.51339 212.00875 202.76188 C 212.00875 209.63568 205.65253 214.62 195.68438 214.62 C 183.82792 214.62 177.12595 208.43368 171.96938 200.0125 L 152.38125 211.35438 C 159.42572 225.27427 173.86117 235.92812 196.20063 235.92812 C 219.05533 235.92812 236.0675 224.07166 236.0675 202.41813 C 236.0675 182.31319 224.55327 173.37892 204.10375 164.61437 L 198.09 162.03688 C 187.78051 157.56866 183.3125 154.64632 183.3125 147.42875 C 183.3125 141.58707 187.78056 137.11937 194.82625 137.11937 C 201.69965 137.11937 206.16618 140.0401 210.29063 147.42875 L 229.02187 135.40062 C 221.11798 121.48113 210.1198 116.15313 194.82563 116.15313 z M 115.25625 117.52875 L 115.25625 199.32688 C 115.25625 211.35481 110.27199 214.44688 102.36688 214.44688 C 94.120018 214.44688 90.681954 208.77736 86.9025 202.07625 L 67.3125 213.9325 C 72.983476 225.95971 84.154366 235.92625 103.39813 235.92625 C 124.70748 235.92625 139.31375 224.58421 139.31375 199.66688 L 139.31375 117.52875 L 115.25625 117.52875 z M 67.3125 213.9325 C 67.312103 213.93166 67.311646 213.93084 67.31125 213.93 L 67.311875 213.9325 L 67.3125 213.9325"
+         fill="#f6f6f6"
+         id="path1" />
+    </g>
+  </g>
+</svg>

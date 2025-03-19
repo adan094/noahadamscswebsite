@@ -108,6 +108,19 @@ section > h2
   filter: drop-shadow(0 0 2em rgba(120, 194, 199, 0.5));
 }
 
+.imageLabelContainer:hover
+{
+  position: relative;
+  top: -10px;
+  color:#02dfef;
+  font-weight: 700;
+}
+
+.imageLabelContainer:hover >p
+{
+  font-weight: 700;
+}
+
 .contactContainer:hover
 {
   color:#02dfef;

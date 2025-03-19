@@ -11,21 +11,43 @@ export default function Body(props)
     const projects = useRef();
     const contact = useRef();
 
+    const [isStackHovered, setIsStackHovered]=useState([false,false,false,false,false,false,false,false,false,false,false,false]);
+
+
+    function setStackHovered(status,pid)
+    {
+      let id=-1
+         setIsStackHovered(hovered=>(hovered.map(element=>{
+          id++
+          if(pid==id)
+            return status;
+          return element;
+         })))
+    }
+
+
+let id=-1;
+
     const stackElements = StacksList.map((stack)=>{
+      id++;
         return (
           <StackElement
+            id={id}
             src= {stack.src}
+            srcHover= {stack.srcHover}
             alt= {stack.alt}
             text= {stack.text}
+            setHovered={setStackHovered}
+            isHovered={isStackHovered[id]}
           />
         )
       })
 
-      const [isHovered, setIsHovered]=useState([false,false,false]);
-      function setHovered(status,pid)
+      const [isContactHovered, setIsContactHovered]=useState([false,false,false]);
+      function setContactHovered(status,pid)
       {
         let id=-1
-           setIsHovered(hovered=>(hovered.map(element=>{
+           setIsContactHovered(hovered=>(hovered.map(element=>{
             id++
             if(pid==id)
               return status;
@@ -33,7 +55,7 @@ export default function Body(props)
            })))
       }
 
-      let id=-1
+      id=-1
 
       const contactElements = ContactsList.map((contact)=>{
         id++
@@ -44,8 +66,8 @@ export default function Body(props)
             alt= {contact.alt}
             srcHover= {contact.srcHover}
             text= {contact.text}
-            setHovered={setHovered}
-            isHovered={isHovered[id]}
+            setHovered={setContactHovered}
+            isHovered={isContactHovered[id]}
             action={contact.action}
           />
         )
