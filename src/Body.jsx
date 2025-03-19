@@ -39,6 +39,7 @@ let id=-1;
             text= {stack.text}
             setHovered={setStackHovered}
             isHovered={isStackHovered[id]}
+            link={stack.link}
           />
         )
       })
