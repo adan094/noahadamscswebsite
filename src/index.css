@@ -103,17 +103,17 @@ section > h2
   margin:0 0 5px 0;
 }
 
-.imageLabelContainer > img:hover
-{
-  filter: drop-shadow(0 0 2em rgba(120, 194, 199, 0.5));
-}
-
 .imageLabelContainer:hover
 {
   position: relative;
   top: -10px;
   color:#02dfef;
   font-weight: 700;
+}
+
+.imageLabelContainer:hover >img
+{
+  transform: scale(1.1);
 }
 
 .imageLabelContainer:hover >p
