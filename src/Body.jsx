@@ -118,7 +118,6 @@ let id=-1;
     
           <section id="projects" ref={projects}>
             <h2>Projects</h2>
-            <h2 style={{fontSize:"1.8rem", marginTop:"120px"}}>NHL Scorigami</h2>
             <Projects/>
           </section>
 
