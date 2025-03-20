@@ -1,23 +1,18 @@
 import NHLScorigami from "./NHLScorigami"
 import ResearchProject from "./ResearchProject"
-import StacksList from "../stackslist.js"
+import SectionHeader from "./SectionHeader.jsx"
 
 export default function Projects()
 {
 
-    /*Gets the list of images from the StacksList*/
-    function getImages(imageIDs)
-    {
-        return imageIDs.map((id)=>{
-            return(<img src={StacksList[id].src} alt={StacksList[id].alt}/>)
-        })
-    }
-
    return(
-    /*Render individual projects*/
+    /* Render individual projects */
     <>
-        <NHLScorigami
-            images={getImages([0,1,2,3,10])}
+        
+        <SectionHeader 
+            sectionTitle={"NHL Scorigami"}
+            /* Pass the section as an argument to be used by SectionHeader */
+            section = {<NHLScorigami />}
         />
        { /*<ResearchProject/>*/}
     </>

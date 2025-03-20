@@ -16,12 +16,9 @@ export default function NHLScorigami(props)
 
     var maxOccurences=0;
 
-    //alert(HistoricData[0].timesOcurred)
 
     for (let index = 0; index<200; index++)
     {    
-        //alert("hi")
-       //alert(HistoricData[index].timesOcurred)
         if(parseInt(HistoricData[index].timesOcurred)>maxOccurences)
         {
             maxOccurences=parseInt(HistoricData[index].timesOcurred);
@@ -163,17 +160,11 @@ export default function NHLScorigami(props)
     }
 
 
+
     return (
 
-            <div className="sectionElements">
-                <div className="sectionHeader">
-                    <h2>NHL Scorigami</h2>
-                    <div className="imagesContainer">
-                        {props.images}
-                    </div>
-                    
-                </div>
-                    
+            
+                 <>   
                     <div >
                         <p>
                             Scorigami is a concept that tracks unique scores in a particular sport's league. A scorigami occurs when a scoreline appears for the first time in the league's history. The term was coined and popularized by sports writer <a href="https://en.wikipedia.org/wiki/Jon_Bois">Jon Bois</a> in a <a href="https://www.youtube.com/watch?v=9l5C8cGMueY">2016 YouTube video by Secret Base</a>. The video analyzed the NFL, whose <a href="https://nflscorigami.com/">scorigami table</a> is particularly interesting due to the NFL's unique scoring increments and large deviations in rarity.
@@ -200,6 +191,6 @@ export default function NHLScorigami(props)
                         <p > <span style={{fontWeight:"600"}}></span>{occ} occurences</p>
                         <p>Last: <span style={{fontWeight:"600"}}>{win}</span> {wing} def <span style={{fontWeight:"600"}}>{lose}</span> {loseg} | {times} ago</p>
                     </div>
-                </div>
+                </>
     )
 }
