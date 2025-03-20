@@ -107,8 +107,9 @@ let id=-1;
             <h2>About</h2>
             <div className="sectionElements">
               <div className="aboutText">
-                <p>Hello!</p>
-                <p>My name is Noah, welcome to my website! I am a software developer with a passion for web development, machine learning and backend development. Here you will find various projects that I have worked on. If you're interested in contacting me regarding a project or just want to talk, I have also included my contact info below.</p>
+                <p>Hi there, I'm Noah Adams, a passionate Software Developer and Machine Learning Enthusiast with a strong background in full-stack web development, data analysis, and AI/ML. I hold a Bachelor’s degree in Computer Science, specializing in Artificial Intelligence, and I have hands-on experience in designing, developing, and optimizing solutions across multiple domains.</p>
+                <p>On this website, you'll find details about my projects, skills, and professional experiences. I am always excited about new opportunities to contribute to cutting-edge technologies and solve complex problems in impactful ways. Whether you’re looking to hire for a technical role or collaborate on innovative projects, I'd love to connect and see how we can work together to create something meaningful.</p>
+                <p>Feel free to explore my portfolio and get in touch if you'd like to learn more about my work or discuss how I can contribute to your team. Thanks for visiting!</p>
               </div>
               <div className= "imagesContainer">
                 {stackElements}

@@ -96,11 +96,34 @@ section > h2
   padding: 0;
 }
 
-.sectionHeader > .imagesContainer > img
+.sectionHeader > .imagesContainer > .imageLabelContainer
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.sectionHeader > .imagesContainer > .imageLabelContainer > img
 {
   width: 40px;
-  margin: 0 0 0 20px;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
+}
+
+.sectionHeader > .imagesContainer > .imageLabelContainer > img:hover
+{
+  transform: scale(1.1);
+  position: relative;
+  top: -10px;
+}
+
+.sectionHeader > .imagesContainer > .imageLabelContainer > h4
+{
+  display: none;
+  position: absolute;
+  top:35px;
 }
 
 .imagesContainer
