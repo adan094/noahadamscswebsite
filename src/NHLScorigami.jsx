@@ -4,7 +4,7 @@ import HeaderCell from "./HeaderCell.jsx"
 import { useState, useEffect } from 'react'
 import Fetch from "../Fetch.js"
 
-export default function NHLScorigami()
+export default function NHLScorigami(props)
 {
     let HistoricData = prevHistoricData
 
@@ -163,12 +163,17 @@ export default function NHLScorigami()
     }
 
 
-
     return (
 
             <div className="sectionElements">
-                <h2>NHL Scorigami</h2>
-
+                <div className="sectionHeader">
+                    <h2>NHL Scorigami</h2>
+                    <div className="imagesContainer">
+                        {props.images}
+                    </div>
+                    
+                </div>
+                    
                     <div >
                         <p>
                             Scorigami is a concept that tracks unique scores in a particular sport's league. A scorigami occurs when a scoreline appears for the first time in the league's history. The term was coined and popularized by sports writer <a href="https://en.wikipedia.org/wiki/Jon_Bois">Jon Bois</a> in a <a href="https://www.youtube.com/watch?v=9l5C8cGMueY">2016 YouTube video by Secret Base</a>. The video analyzed the NFL, whose <a href="https://nflscorigami.com/">scorigami table</a> is particularly interesting due to the NFL's unique scoring increments and large deviations in rarity.

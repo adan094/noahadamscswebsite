@@ -69,6 +69,38 @@ section > h2
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top:150px;
+}
+
+.sectionHeader
+{
+  display: flex;
+  width:100%;
+  align-items: center;
+}
+
+.sectionHeader > h2
+{
+  font:1.8rem;
+  text-align:left;
+  color:#02dfef;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.sectionHeader > .imagesContainer
+{
+  justify-content:right;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.sectionHeader > .imagesContainer > img
+{
+  width: 40px;
+  margin: 0 0 0 20px;
+  padding: 0%;
 }
 
 .imagesContainer
@@ -145,13 +177,7 @@ section > h2
   line-height: 1.8rem;
 }
 
-.sectionElements > h2
-{
-  font:1.8rem;
-  margin-top:70px;
-  text-align:left;
-  color:#02dfef;
-}
+
 
 .aboutText
 {
