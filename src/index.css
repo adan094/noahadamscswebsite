@@ -121,6 +121,7 @@ section > h2
 
 .sectionHeader > .imagesContainer > .imageLabelContainer > h4
 {
+  color:#f6f6f6;
   display: none;
   position: absolute;
   top:35px;
