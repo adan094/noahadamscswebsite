@@ -77,23 +77,32 @@ section > h2
   display: flex;
   width:100%;
   align-items: center;
+  flex-wrap: wrap;
+  padding:0.05px;
 }
 
 .sectionHeader > h2
 {
+  text-wrap: nowrap;
   font:1.8rem;
   text-align:left;
   color:#02dfef;
   flex-grow: 1;
   flex-basis: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .sectionHeader > .imagesContainer
 {
   justify-content:right;
   align-items: center;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 0;
   padding: 0;
+  flex-wrap: nowrap;
 }
 
 .sectionHeader > .imagesContainer > .imageLabelContainer
