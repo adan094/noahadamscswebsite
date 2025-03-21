@@ -34,13 +34,15 @@ export default function SectionHeader(props)
             mask[id]=pid;
             // Return the image with the hover effect
             return(
-                <div className="imageLabelContainer">
+                <div 
+                    className="imageLabelContainer"
+                    // Set the hover effect
+                    onMouseEnter={()=>isHovered(true,mask[id])} 
+                    // Remove the hover effect
+                    onMouseLeave={()=>isHovered(false,mask[id])} 
+                >
                     {/* Set the image */}
                     <img 
-                        // Set the hover effect
-                        onMouseEnter={()=>isHovered(true,mask[id])} 
-                        // Remove the hover effect
-                        onMouseLeave={()=>isHovered(false,mask[id])} 
                         // Get the image from the StacksList array based upon hover status
                         src={hovered[mask[id]]?StacksList[id].srcHover:StacksList[id].src} 
                         // Set the alt text for the image

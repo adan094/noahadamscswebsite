@@ -121,7 +121,7 @@ section > h2
   padding: 0;
 }
 
-.sectionHeader > .imagesContainer > .imageLabelContainer > img:hover
+.sectionHeader > .imagesContainer > .imageLabelContainer:hover
 {
   transform: scale(1.1);
   position: relative;
@@ -134,7 +134,7 @@ section > h2
   color:#f6f6f6;
   display: none;
   position: absolute;
-  top:35px;
+  top:40px;
 }
 
 .imagesContainer
