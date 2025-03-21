@@ -282,12 +282,14 @@ td:hover
   width:470px;
   background-color: white;
   border: 2px black solid;
+  border-radius: 20px;
 }
 
 .popup > div > p
 {
   color:black;
   margin:5px;
+  margin-left: 10px;
   margin-bottom: -5px;
   font-size: 1rem;
   text-wrap: wrap;
@@ -300,12 +302,14 @@ td:hover
   width:100%;
   background-color: white;
   border: 2px black solid;
+  border-radius: 20px;
 }
 
 .bottomInfo > p
 {
   color:black;
   margin:5px;
+  margin-left: 10px;
   font-size: 1rem;
   text-wrap: wrap;
   line-height: 20px;
