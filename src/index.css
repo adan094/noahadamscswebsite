@@ -12,8 +12,6 @@ body
   font-size: 1.2rem;
 }
 
-
-
 .Navbar
 {
   width:100%;
@@ -30,7 +28,10 @@ body
   font-size:1rem;
   top:0;
   position: fixed;
+  z-index : 1;
 }
+
+
 
 .Navbar > li > a
 {
