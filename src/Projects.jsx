@@ -8,7 +8,7 @@ export default function Projects()
    return(
     /* Render individual projects */
     <>
-        {/* NHl Scorigami project */}
+        {/* NHL Scorigami project */}
         <SectionHeader 
             sectionTitle={"NHL Scorigami"}
             /* Pass the section as an argument to be used by SectionHeader */

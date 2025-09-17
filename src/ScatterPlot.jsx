@@ -54,6 +54,7 @@ export default function ScatterPlot(props)
                       endTime={ProjectData[0].endTime/1000000000/10}
                       scale={1/300}
                       graphType={"ScatterPlot"}
+                      delay={0}
                     /> }
                         {ProjectPoints}     
                     </div>

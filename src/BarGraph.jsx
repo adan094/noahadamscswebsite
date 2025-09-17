@@ -24,11 +24,18 @@ export default function BarGraph(props)
 
       var delay = props.delay*scale/10;
       var durationModifier = 10;
+
       if(props.method==="previousMethod")
       {
         delay = 0;
         durationModifier = 1;
       }
+
+      var endTimeModifier = 1;
+
+      //our Method is 10X faster so the endTime is /10
+      if(props.method==="ourMethod")
+        endTimeModifier/=10;
     
 
     const ProjectBars = ProjectData.map((data)=>{
@@ -53,7 +60,7 @@ export default function BarGraph(props)
                     <div className="graph">
                     <Timing
                       setAnimationName={setAnimationName}
-                      endTime={ProjectData[ProjectData.length-1].endTime/1000}
+                      endTime={ProjectData[ProjectData.length-1].endTime/1000*endTimeModifier}
                       scale={scale}
                       graphType={"BarGraph"}
                       delay={props.delay/10}
