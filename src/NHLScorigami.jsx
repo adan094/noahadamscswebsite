@@ -4,6 +4,8 @@ import HeaderCell from "./HeaderCell.jsx"
 import { useState, useEffect } from 'react'
 import Fetch from "../Fetch.js"
 
+//Component for the NHL Scorigami project section
+
 export default function NHLScorigami(props)
 {
 
@@ -12,13 +14,13 @@ export default function NHLScorigami(props)
     // Fetch data from the NHL API
    useEffect(() => {
 
-    (async () => await Fetch())()
+        //Wait for Fetch to complete before setting HistoricData
+        (async () => await Fetch())()
     
     }, [HistoricData])
 
-    var maxOccurences=0;
-
-    //FInd which score has the most occurences
+    //Find which score has the most occurences
+    let maxOccurences=0;
     for (let index = 0; index<200; index++)
     {    
         if(parseInt(HistoricData[index].timesOcurred)>maxOccurences)

@@ -2,16 +2,15 @@
 import StacksList from "../stackslist.js"
 import {useState} from "react"
 
-export default function SectionHeader(props)
+//Component for each project, contains the header with the title and tech stack images, as well as the section content passed as a prop
+export default function Project(props)
 {
-
-
-
     // Gets the list of images from the StacksList array
     function getImages(imageIDs)
     {
         //mask to keep track of position of each image in the imageIDs array
         let mask = Array(imageIDs.length);
+
         // Function to select the hovered image and deselect all other images
         function isHovered(status,pid)
         {
@@ -24,6 +23,7 @@ export default function SectionHeader(props)
            })))
         }
 
+        //More logic to consider refactoring to common component with StackElement and ContactElement in the future
         // State to keep track of which image is hovered
         const [hovered, setHovered] = useState(Array(imageIDs.length).fill(false));
         // Position of the image in the imageIDs array
@@ -57,7 +57,7 @@ export default function SectionHeader(props)
         
     return(
         <div className="sectionElements">
-            <div className="sectionHeader">
+            <div className="Project">
                 <h2>{props.sectionTitle}</h2>
                 <div className="imagesContainer">
                     {/* Get the stacks for the project by position in StacksList array */}

@@ -1,7 +1,8 @@
 import NHLScorigami from "./NHLScorigami"
 import ResearchProject from "./ResearchProject"
-import SectionHeader from "./SectionHeader.jsx"
+import Project from "./Project.jsx"
 
+//Projects Component - contains the individual projects
 export default function Projects()
 {
 
@@ -9,18 +10,18 @@ export default function Projects()
     /* Render individual projects */
     <>
         {/* NHL Scorigami project */}
-        <SectionHeader 
+        <Project 
             sectionTitle={"NHL Scorigami"}
-            /* Pass the section as an argument to be used by SectionHeader */
+            /* Pass the section as an argument to be used by Project */
             section = {<NHLScorigami />}
             /* Pass the image IDs for the stacklist in header of the project page */
             imagesIDs={[0,1,2,3,10]}
         />
 
         {/* Research Project */}
-        <SectionHeader 
+        <Project 
             sectionTitle={"Market Basket Analysis using K-Means Clustering"}
-            /* Pass the section as an argument to be used by SectionHeader */
+            /* Pass the section as an argument to be used by Project */
             section = {<ResearchProject />}
             /* Pass the image IDs for the stacklist in header of the project page */
             imagesIDs={[0,1,2,3,10]}

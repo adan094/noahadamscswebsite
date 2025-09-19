@@ -14,7 +14,7 @@ export default function Graph(props)
             {props.graphType === "BarGraph" && (
                 <BarGraph dataRow={props.dataRow}
                     method={props.method}
-                    delay={ProjectData[0].endTime/1000000000}           
+                    delay={ProjectData[0].endTime/10000000}           
                 />
             )}
             {props.graphType === "ScatterPlot" && (

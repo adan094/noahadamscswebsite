@@ -1,9 +1,5 @@
 export default function VerticalLabelExponential(props)
 {
-
-       
-
-        
     
         const labelsDiv = props.labels.map((labelValue) => {
            const shortLabel = props.shortenNumber(labelValue);

@@ -8,6 +8,8 @@ export default function Timing(props)
     const nodeRef = useRef();
     //stores and updates timer time, allows any delay to pass before timer is started
     const [count, setCount] = useState(-props.delay);
+
+
     //Uses isVisible from intersection observer to check if timer is visible
     const isVisible = useIsVisible(nodeRef);
 

@@ -73,7 +73,7 @@ section > h2
   align-items: center;
 }
 
-.sectionHeader
+.Project
 {
   display: flex;
   width:100%;
@@ -82,7 +82,7 @@ section > h2
   padding:0.05px;
 }
 
-.sectionHeader > h2
+.Project > h2
 {
 
   font:1.8rem;
@@ -94,7 +94,7 @@ section > h2
   margin-bottom: 20px;
 }
 
-.sectionHeader > .imagesContainer
+.Project > .imagesContainer
 {
   justify-content:right;
   align-items: center;
@@ -106,7 +106,7 @@ section > h2
   flex-wrap: nowrap;
 }
 
-.sectionHeader > .imagesContainer > .imageLabelContainer
+.Project > .imagesContainer > .imageLabelContainer
 {
   display: flex;
   flex-direction: column;
@@ -115,21 +115,21 @@ section > h2
   margin: 0 20px;
 }
 
-.sectionHeader > .imagesContainer > .imageLabelContainer > img
+.Project > .imagesContainer > .imageLabelContainer > img
 {
   width: 40px;
   margin: 0;
   padding: 0;
 }
 
-.sectionHeader > .imagesContainer > .imageLabelContainer:hover
+.Project > .imagesContainer > .imageLabelContainer:hover
 {
   transform: scale(1.1);
   position: relative;
   top: -5px;
 }
 
-.sectionHeader > .imagesContainer > .imageLabelContainer > h4
+.Project > .imagesContainer > .imageLabelContainer > h4
 {
   color:#f6f6f6;
   display: none;
@@ -467,7 +467,8 @@ a:hover
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-fill-mode: forwards;
-  animation-iteration-count: 5;
+  /* Needs to be refactored in ScatterPlot to run the appropritae number of times based upon entTime calculations */
+  animation-iteration-count: 2;
 }
 
 @keyframes blinker {

@@ -10,10 +10,9 @@ export default function BarGraph(props)
 {
 
 
-
     // Get the project data
     let ProjectData=data[props.dataRow];
-    const maxRules = ProjectData[0].rules;//
+    const maxRules = ProjectData[0].rules;
 
     const maxHeight = 350;
     const scale= 1/300;
@@ -21,15 +20,15 @@ export default function BarGraph(props)
       //animation-class: progress-animation;
       const [animationName, setAnimationName] = useState("");
 
-
-      var delay = props.delay*scale/10;
+      var delay = props.delay/1000;
       var durationModifier = 10;
 
-      if(props.method==="previousMethod")
+      if(props.method=="previousMethod")
       {
         delay = 0;
         durationModifier = 1;
       }
+
 
       var endTimeModifier = 1;
 
@@ -44,7 +43,7 @@ export default function BarGraph(props)
             key={data.products}
             products={data.products}
             marginLeft={4.7+10.7*(data.products-2)}
-            startTime={(data.startTime*scale/1000)/durationModifier+delay}
+            startTime={(data.startTime*scale/1000)/durationModifier+delay*scale}
             duration={(data.endTime-data.startTime)*scale/1000/durationModifier}
             maxHeight={data.rules/maxRules*maxHeight}
             animationName={animationName}
@@ -63,7 +62,7 @@ export default function BarGraph(props)
                       endTime={ProjectData[ProjectData.length-1].endTime/1000*endTimeModifier}
                       scale={scale}
                       graphType={"BarGraph"}
-                      delay={props.delay/10}
+                      delay={delay}
                       method={props.method}
                     />
                         {ProjectBars}     

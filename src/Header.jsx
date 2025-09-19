@@ -1,10 +1,9 @@
 
+//Header component, contains navbar with links to sections of the page
 
 export default function Header(props)
 {
-
-
-    
+    //holds section data, when section is clicked: that section is made active and jumped to via # tag, if a section is active it is highlighted in the navbar
     return (
         <header>
             <ul className="Navbar">

@@ -3,10 +3,9 @@ import './index.css'
 import App from './App.jsx'
 
 
-
+//renders the react application
 createRoot(document.getElementById('root')).render(
-  
-  <main onScroll={()=>setSection(2)}>
+  <main>
     <App/>
   </main>
 )
