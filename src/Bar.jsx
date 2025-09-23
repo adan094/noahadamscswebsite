@@ -2,7 +2,6 @@
 
 export default function Bar(props)
 {
-    //alert(props.animationPaused);
     return (
         <div 
             style= 

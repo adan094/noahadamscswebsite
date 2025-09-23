@@ -467,7 +467,7 @@ a:hover
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-fill-mode: forwards;
-  /* Needs to be refactored in ScatterPlot to run the appropritae number of times based upon entTime calculations */
+  /* Needs to be refactored in ScatterPlot to run the appropriate number of times based upon entTime calculations */
   animation-iteration-count: 2;
 }
 
