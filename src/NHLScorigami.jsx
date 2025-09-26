@@ -36,7 +36,7 @@ export default function NHLScorigami(props)
         
         const min =2;
         const max = 210;
-        if((id/c)-1>id%c || id==c)
+        if((id/numberOfColumns)-1>id%numberOfColumns || id==numberOfColumns)
             return "null"
         else if( parseInt(HistoricData[id].timesOcurred)>0)
             return "rgba(" + (max-((max-min)*Math.sqrt(parseInt(HistoricData[id].timesOcurred))/Math.sqrt(maxOccurences))) +", 223, 239, 1)"
@@ -44,15 +44,17 @@ export default function NHLScorigami(props)
             return "white"
     }
 
-    
+    //State variables for the bottom info bar, which displays information about the score currently being hovered over
     const [occ, setOcc] = useState("");
     const [win, setWin] = useState("");
     const [lose, setLose] = useState("");
     const [wing, setWing] = useState("");
     const [loseg, setLoseg] = useState("");
     const [times, setTimes] = useState("");
+    const [gameCenterLink, setGameCenterLink] = useState("")
 
-    function processBottomInfo(occur,winner,winnerGoals,loser,loserGoals,timeSince)
+    //Function to update the bottom info bar
+    function processBottomInfo(occur,winner,winnerGoals,loser,loserGoals,timeSince, gameCenterLink)
     {
         setOcc(occur);
         setWin(winner);
@@ -60,57 +62,72 @@ export default function NHLScorigami(props)
         setLose(loser)
         setLoseg(loserGoals)
         setTimes(timeSince)
+        
+        // Only set the gameCenterLink if it exists to avoid overwriting with undefined
+        if(gameCenterLink)
+            setGameCenterLink(gameCenterLink)
     }
 
 
-
+    //State variable to determine if the bottom info bar should be shown (only on mobile when a cell is hovered over)
     const [bottomBar, setBottomBar] = useState(false)
 
-    var c = 17
-    var columnArray = [...Array(c)]
+    const numberOfColumns = 17
+    const numberOfRows = 10
 
-    const[selectedH, setSelectedH] =useState([false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false])
-    const[selectedV, setSelectedV] =useState([false,false,false,false,false,false,false,false,false,false])
+    //Create array to represent the columns of the table
+    var columnArray = [...Array(numberOfColumns)]
 
+    //State variables to track which row and column is being hovered over, to highlight the corresponding row and column
+    const[selectedColumn, setSelectedColumn] =useState(Array(numberOfColumns).fill(false))
+    const[selectedRow, setSelectedRow] =useState(Array(numberOfRows).fill(false))
+
+    //Create array to represent the header row of the table
     var i1 = -1
-    const headerArray= selectedH.map((s)=> {
+    const headerArray= selectedColumn.map((column)=> {
         i1++
         return (
-            <HeaderCell key={i1} id={i1} selected={s}/>
+            <HeaderCell key={i1} id={i1} selected={column}/>
         )
     })
 
-
-
-    var rowArray= new Array(10).fill(columnArray)
+    //Create the rows of the table, each containing ScorigamiCells and a HeaderCell at the end
     var i = -1
-    const tableArray = selectedV.map(s => {
-        var cl = [...Array(c)]
+    //Loop over each row
+    const tableArray = selectedRow.map(s => {
+        //Create an array to represent the cells in each row
+        var row = [...Array(numberOfColumns)]
         return ( <tr> 
-        {cl.map((element)=> {
+
+        {/* For each cell in the row, create a ScorigamiCell */}
+        {row.map((element)=> {
             i++
+            //If the score has occurred at least once, pass extra props to the ScorigamiCell to display in the bottom info bar when hovered over
             if(HistoricData[i].timesOcurred>0)
             {
                 return (
                     <ScorigamiCell key={HistoricData[i]} calcCellColor=  {calcCellColor} id={i}
-                    mouseOver = {mouseOver} mouseLeave = {mouseLeave} occurrences={HistoricData[i].timesOcurred}  c={c} processBottomInfo={processBottomInfo}
-                    lastWinner = {HistoricData[i].lastWinner.substring(1,HistoricData[i].lastWinner.length-1)} lastLoser = {HistoricData[i].lastLoser.substring(1,HistoricData[i].lastLoser.length-1)} timeSinceLast= {(Date.now()-(new Date((HistoricData[i].lastDate).trim())).getTime()) / 1000}/>
+                    mouseOver = {mouseOver} mouseLeave = {mouseLeave} occurrences={HistoricData[i].timesOcurred}  numberOfColumns={numberOfColumns} processBottomInfo={processBottomInfo}
+                    lastWinner = {HistoricData[i].lastWinner.substring(1,HistoricData[i].lastWinner.length-1)} lastLoser = {HistoricData[i].lastLoser.substring(1,HistoricData[i].lastLoser.length-1)} timeSinceLast= {(Date.now()-(new Date((HistoricData[i].lastDate).trim())).getTime()) / 1000}  gameCenterLink={HistoricData[i].gameCenterLink}/>
                 )
             }
             else
             {
                 return (
                     <ScorigamiCell key={HistoricData[i]} calcCellColor=  {calcCellColor} id={i}
-                    mouseOver = {mouseOver} mouseLeave = {mouseLeave} occurrences={HistoricData[i].timesOcurred}  c={c}/>
+                    mouseOver = {mouseOver} mouseLeave = {mouseLeave} occurrences={HistoricData[i].timesOcurred}  numberOfColumns={numberOfColumns}/>
                 )
             }
-    })} <HeaderCell key={Math.floor(i/c)} id={Math.floor(i/c)} selected={s}/> </tr>
+        })} 
+
+        {/* At the end of each row, create a HeaderCell to label the row */}
+        <HeaderCell key={Math.floor(i/numberOfColumns)} id={Math.floor(i/numberOfColumns)} selected={s}/> </tr>
     )})
 
     function mouseOver(id)
     {
         let i2=-1
-        setSelectedH(arr=>{
+        setSelectedColumn(arr=>{
             return(
                 arr.map((cond)=>{
                     i2++
@@ -122,7 +139,7 @@ export default function NHLScorigami(props)
         })
 
         let i3=-1
-        setSelectedV(arr=>{
+        setSelectedRow(arr=>{
             return(
                 arr.map((cond)=>{
                     i3++
@@ -138,7 +155,7 @@ export default function NHLScorigami(props)
     function mouseLeave(id)
     {
         let i2=-1
-        setSelectedH(arr=>{
+        setSelectedColumn(arr=>{
             return(
                 arr.map((cond)=>{
                     i2++
@@ -150,7 +167,7 @@ export default function NHLScorigami(props)
         })
 
         let i3=-1
-        setSelectedV(arr=>{
+        setSelectedRow(arr=>{
             return(
                 arr.map((cond)=>{
                     i3++

@@ -30,6 +30,7 @@ export default function ExponentialLabel(props)
 
     //Calculates the left margin needed for a label based on its length and suffix
     function labelMargin(labelValue) {
+        //Base margin is -60 to account for left padding of the graph
         var margin = -60;
         if(labelValue[labelValue.length-1] == "K")
             margin+=3;

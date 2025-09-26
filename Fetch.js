@@ -32,10 +32,11 @@ async function getWeek()
                         if(game.gameState=="OFF"||game.gameState=="FINAL")
                     {                       
                          let winningTeam= game.homeTeam.commonName.default;
-                    //    alert(winningTeam)
                     let winningScore= game.homeTeam.score;
                     let losingTeam= game.awayTeam.commonName.default;
                     let losingScore= game.awayTeam.score;
+                    let gameCenterLink = 'https://www.nhl.com' + game.gameCenterLink;
+
                     
                     if(losingScore >winningScore)
                     {
@@ -47,7 +48,7 @@ async function getWeek()
                         losingScore=tempScore
                     }
                     
-                    d.push({winningTeam: winningTeam, losingTeam: losingTeam, winningScore: winningScore, losingScore: losingScore, date: game.startTimeUTC})
+                    d.push({winningTeam: winningTeam, losingTeam: losingTeam, winningScore: winningScore, losingScore: losingScore, date: game.startTimeUTC, gameCenterLink: gameCenterLink});
                 }
                 }
         
@@ -115,6 +116,7 @@ async function getWeek()
             //alert(HistoricData[id].lastWinner)
            HistoricData[id].lastLoser=" "+game.losingTeam+" ";
             HistoricData[id].lastDate=game.date;
+            HistoricData[id].gameCenterLink=game.gameCenterLink;
             //alert(HistoricData[id].lastDate)
             //alert(game.date)
         })

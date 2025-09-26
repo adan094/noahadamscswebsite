@@ -282,7 +282,7 @@ td:hover
   border-radius: 20px;
 }
 
-.popup > div > p
+.popup > div > p, .popup > div > a > p
 {
   color:black;
   margin:5px;
@@ -290,6 +290,12 @@ td:hover
   margin-bottom: -5px;
   font-size: 1rem;
   text-wrap: wrap;
+  text-decoration: none;
+}
+
+.popup > div > a > p:hover
+{
+  text-decoration: underline;
 }
 
 .bottomInfo
@@ -476,3 +482,4 @@ a:hover
     opacity: 0;
   }
 }
+
