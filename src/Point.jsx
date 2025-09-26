@@ -12,7 +12,7 @@ export default function Point(props) {
         <div
             className="point"
             style={{
-                backgroundColor: props.keep ?  "#02dfef" : "#efefef",
+                backgroundColor: props.keep ?  "#02b5c2" : "#efefef",
                 yIndex:-1,
                 left: `${props.x}%`,
                 bottom: `${y-2}%`,
