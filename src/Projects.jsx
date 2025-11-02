@@ -1,6 +1,7 @@
 import NHLScorigami from "./NHLScorigami"
 import ResearchProject from "./ResearchProject"
 import Project from "./Project.jsx"
+import GasMapper from "./GasMapper.jsx"
 
 //Projects Component - contains the individual projects
 export default function Projects()
@@ -15,7 +16,7 @@ export default function Projects()
             /* Pass the section as an argument to be used by Project */
             section = {<NHLScorigami />}
             /* Pass the image IDs for the stacklist in header of the project page */
-            imagesIDs={[0,1,2,3,10]}
+            imagesIDs={[0,1,2,3,4,10]}
         />
 
         {/* Research Project */}
@@ -26,6 +27,8 @@ export default function Projects()
             /* Pass the image IDs for the stacklist in header of the project page */
             imagesIDs={[0,1,2,3,10]}
         />
+
+       
 
 
     </>
