@@ -198,7 +198,7 @@ export default function NHLScorigami(props)
                             This table is generated using a combination of preprocessing and live NHL API data. With over 100 years of NHL score data, preprocessing ensures that less data needs to be processed upon page load, resulting in quick load times. The live data is gathered by calling the NHL API, which returns data in JSON format. This data is then processed to update the table.
                         </p>
                     </div>
-                    <table>
+                    <table className="ScorigamiTable">
                         <tr>
                             {headerArray}
                             <th></th>

@@ -21,7 +21,6 @@ async function getWeek()
     })
     const data = await response.json();
 
-    alert
 
     data.map((scoreLine => {
         HistoricData[scoreLine.id].timesOcurred=scoreLine.timesOcurred+"";
@@ -35,9 +34,6 @@ async function getWeek()
 }
         
        
-        //alert(HistoricData+"sfd")
-
-        //return HistoricData;
     
     
 getWeek();

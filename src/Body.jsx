@@ -38,17 +38,17 @@ export default function Body(props)
       //Renders the sections of the page
       return (
         <main>
-          <section id="about" className="about" ref={about}>
+          <section id="/about" className="about" ref={about}>
             <h2>About</h2>
             <About/>
           </section>
     
-          <section id="projects" ref={projects}>
+          <section id="/projects" ref={projects}>
             <h2>Projects</h2>
             <Projects/>
           </section>
 
-          <section id="contact" ref={contact}>
+          <section id="/contact" ref={contact}>
             <h2>Contact</h2>
             <Contact/>
           </section>

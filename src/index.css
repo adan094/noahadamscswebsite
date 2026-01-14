@@ -4,6 +4,18 @@
   padding:0;
 }
 
+a:link, a:visited
+{
+  color:#02b5c2;
+  text-decoration: none;
+}
+
+a:hover
+{
+  text-decoration: underline;
+}
+
+
 body
 {
   background: #161616;
@@ -31,16 +43,16 @@ body
   z-index : 1;
 }
 
-.Navbar > li > a
+.Navbar > a
 {
   padding:10px 15px;
   margin:0 20px;
-  color:#efefef;
+  color:white;
   text-decoration: none;
   border-radius: 30px;
 }
 
-.Navbar > li > a:hover
+.Navbar  > a:hover
 {
   background: #161616  ;
   color:white;
@@ -235,7 +247,7 @@ section > h2
   margin-top:0;
 }
 
-table
+.ScorigamiTable
 {
   width:94%;
   justify-content: center;
@@ -251,17 +263,17 @@ table
 
 }
 
-td
+.ScorigamiTable > tr > td
 {
   width:5.8%;
 }
 
-th:last-child
+.ScorigamiTable > tr > th:last-child
 {
   min-width: 20px;
 }
 
-td:hover
+.ScorigamiTable > tr > td:hover
 {
   transform: scale(1.1);
 }
@@ -320,16 +332,6 @@ td:hover
   line-height: 20px;
 }
 
-a:link, a:visited
-{
-  color:#02b5c2;
-  text-decoration: none;
-}
-
-a:hover
-{
-  text-decoration: underline;
-}
 
 .graphHolder
 {
@@ -487,4 +489,109 @@ a:hover
     opacity: 0;
   }
 }
+
+.formFieldWrapper
+{
+  display: flex;
+  min-height: 400px;
+  width: 400px;
+}
+
+.loadingDisplay, .resultDisplay
+{
+  min-height: 400px;
+  width: 400px;
+}
+.loadingDisplay
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formColumn
+{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 50px;
+}
+
+.formColumn > label
+{
+  margin-bottom: 10px;
+}
+
+.formColumn > input,  button, .formColumn > select, .FuelEfficiencyRankingsSection > Form > select
+{
+  margin-bottom: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button
+{
+  width:400px;
+}
+
+.result
+{
+  text-align: center;
+  margin-top: 100px;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.reset
+{
+  width: 300px;
+  margin:auto;
+}
+
+.GasCalculatorSection
+{
+  width:400px;
+  margin-left:calc(50% - 200px);
+  margin-right:calc(50% - 200px);
+}
+
+.GasComparerSection
+{
+  width:400px;
+  margin-left:calc(25% - 400px);
+  margin-right:calc(25% - 400px);
+}
+
+.ComparisonResults, .EfficiencyTable
+{
+  margin-top:10px;
+  border: white 2px solid;
+  justify-content: center;
+}
+
+.ComparisonResults > tr> td
+{
+text-align: center;
+  width:25vw;
+}
+
+.EfficiencyTable
+{
+  width:75vw;
+}
+
+.EfficiencyTable > tr > td
+{
+  text-align: center;
+  width:10vw;
+}
+
+.FuelEfficiencyRankingsSection > Form > select
+{
+  margin-right:1vw;
+  font-size: 0.9rem;
+}
+
 
