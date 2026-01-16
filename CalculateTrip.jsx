@@ -1,4 +1,4 @@
-import GetCoordinates from "./getCoordinates.js";
+import GetCoordinates from "./GetCoordinates.js";
 import GetPriceofGas from "./src/GetPriceofGas.jsx";
 
 export default async function CalculateTrip(address1, address2, setIsLoading){
