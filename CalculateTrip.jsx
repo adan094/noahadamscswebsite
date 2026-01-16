@@ -15,7 +15,7 @@ export default async function CalculateTrip(address1, address2, setIsLoading){
             return [null, null];
         }
 
-        response = await fetch('http://router.project-osrm.org/route/v1/driving/'+coordinatesFrom+';'+coordinatesTo, {
+        response = await fetch('https://router.project-osrm.org/route/v1/driving/'+coordinatesFrom+';'+coordinatesTo, {
         method: 'GET', 
         headers: {
             'User-Agent': 'https://noahadamscs.com (local testing)'      }
