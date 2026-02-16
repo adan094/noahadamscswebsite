@@ -14,15 +14,18 @@ export default function GetGasPrices(props) {
 //Make it as foolproof as possible and then add stuff to add some more ease of use
 
 
+//for each option added via updateptionList, a unique nodeID is to gernerated, we can do this by make nodeIDList an array or objects with each object being named 
+// after the option and holding the current nodeID for that option, then when the option is added, we can check if it is already in the list and if not add it with
+//  a new nodeID, if it is we can just use the existing nodeID. This way we can ensure that each option has a unique nodeID that is consistent across renders and levels 
+// of the tree, which should fix the issue of keys changing and causing problems with React's rendering.
 
-
-
+var nextNode=0;
 
   //Conversion factor from MPG to L/100km
   const mpgPerL100 = 235.21;
 
   //default categories for dropdowns in order
-  const defaultCategories = ["model variant", "fuel type", "transmission type", "cylinders", "engine description", "drive type", "alternative fuel type"];
+  const defaultCategories = ["model variant", "fuel type", "transmission type", "cylinders", "engine description", "drive type", "alternative fuel type", "engine displacement"];
 
   const [formPart, setFormPart] = useState(0); //tracks which part of the form is being displayed
 
@@ -61,6 +64,12 @@ export default function GetGasPrices(props) {
       }, [formPart]
       )
 
+      useEffect(() => {
+        let tempRoot=rootList;
+        setRootList(rootList);
+      }, [rootList]
+      )
+
   // Reset the form to initial state
   function resetForm() {
     setFormPart(0);
@@ -75,6 +84,9 @@ export default function GetGasPrices(props) {
   function updateOptionList(optionList, level) {
     setOptions(prev => {
       const updated = [...prev];
+      
+
+
       //adds new option list at level
       updated[level] = optionList; 
       return updated;
@@ -86,22 +98,41 @@ export default function GetGasPrices(props) {
 
   // Handle dropdown selection
   function handleChange(e, level) {
+
+    console.log("full root list: " + JSON.stringify(rootList[level])); 
+
     const selected = e.target.value;
     const currentRoot = rootList[level];
+
+
+
 
     if (!currentRoot) return;
 
     const nextRoot = currentRoot.getChild(selected);
 
-    // append nextRoot to rootList
+
+
+    if(level+2<rootList.length)
+    {
+      //alert(level);
+      rootList[level+1].incKey();
+    }
+
+
     setRootList(prev => [...prev.slice(0, level + 1), nextRoot]);
+
 
     // generate next-level options
     const nextList = nextRoot
       .getChildren()
       .map(child => child.value);
 
-    updateOptionList([...new Set(nextList)].sort(), level + 1);
+    console.log("next list:" + JSON.stringify(nextList)+" "+level);
+
+     updateOptionList([...new Set(nextList)].sort(), level + 1); 
+
+     console.log(rootList.length+" "+rootList[level].getCarsMatching()+ " "+categories[level+1]);
   }
 
   // Handle form submission
@@ -188,13 +219,16 @@ export default function GetGasPrices(props) {
             <div className="formColumn" >
               {categories.map((label, i) => ( rootList[i] && rootList[i].getCarsMatching()>1 &&
                 <>
-                  <label>{label}:</label>
-
-                  <select onChange={(e) => handleChange(e, i)}>
+                  <label>{label}: {i}</label>
+{/*Remove key and nodeid + handle change if to reset to prev version*/}
+{/*might need to edit key at elvel instead of head of tree to make this work properly*/}
+                  <select key={rootList[i].getKey()} onChange={(e) => handleChange(e, i)}>
+                    
                     <option selected disabled value="">Choose {label}</option>
+                  
 
                     {options[i].map(opt => (
-                      <option key={opt} value={opt}>
+                      <option value={opt}>
                         {opt === "" ? "N/A" : opt}
                       </option>
                     ))}

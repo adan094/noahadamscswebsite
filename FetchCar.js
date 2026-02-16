@@ -3,6 +3,8 @@ import TreeNode from "./TreeNode.js"
 
 export default async function FetchCar(make, model, year, categories, mpgType){
 
+  
+  //need to add displ to the dropdown list options and database im pulling from
 
 
 var removeCounter=0;
@@ -10,13 +12,20 @@ var removeCounter=0;
 //alert("removeCounter: " + removeCounter);
 
 var firstRun=true;
+
+var newCategories=[];
  
 
 function multipleDifferentChildren(root, data, attribute, depth)
 {
 
+ // alert(attribute);
+
+
+
+
   if(data.length<2)
-    return [false, true];
+    return [false, false];
 
   let optionsSet = new Set();
 
@@ -24,12 +33,23 @@ function multipleDifferentChildren(root, data, attribute, depth)
     optionsSet.add(item[attribute]);
   });
 
-  if(firstRun&&optionsSet.size<2)
+  if(((newCategories.length>0&&newCategories[newCategories.length-1]!=attribute)||newCategories.length==0)&&optionsSet.size>1)
   {
+    //optionlist needs to be additive instead, adding to the lsit of the attribute is not already there.
+
+    newCategories = [...newCategories, attribute];
+
+   // alert(JSON.stringify(newCategories));
+
+    /*alert(attribute);
+
+    for (const item of optionsSet) 
+      alert(item);
+    alert(JSON.stringify(categories))
     categories.splice(depth-removeCounter, 1); //remove attribute from list
-    removeCounter++;
+    alert(JSON.stringify(categories))
+    removeCounter++;*/
   }
-  firstRun=false;
 
   //alert(optionsSet.size+" options found for attribute "+attribute);
 
@@ -39,6 +59,8 @@ function multipleDifferentChildren(root, data, attribute, depth)
 //add attribute as layer in tree
 function checkAtrribute(root, data, attribute, depth)
 {
+
+
   // alert("y");
 
   //tracks if all data items were added without matches
@@ -85,10 +107,15 @@ function checkAtrribute(root, data, attribute, depth)
 function checkChildAttribute(root, attribute, depth, totalDepth)
 {
 
+//if(attribute=="eng_dscr"&&depth===1)
+  //alert(JSON.stringify(root));
+
   let isComplete=true;
   console.log("z: "+JSON.stringify(root.getChildren()));
 
-  //alert("Checking child attribute "+attribute+" at depth "+depth+" children "+ root.getChildren().length);
+
+
+ // alert("Checking child attribute "+attribute+" at depth "+depth+" children "+ root.getChildren().length);
 
   root.getChildren().map((child)=>{
     if(child.getLeaf()===false)
@@ -120,46 +147,30 @@ function checkChildAttribute(root, attribute, depth, totalDepth)
 let root = new TreeNode('seperationTree', null, data.length);
 let isComplete=false;
 
-  firstRun=true;
 //constructs roots children
 [root, isComplete] = checkAtrribute(root, data, "model", 0, 0);
 
   console.log("yeeeeeeeeeee" + JSON.stringify(root));
 
-  firstRun=true;
-//constructs layer by transmission
-if(!isComplete)
-  [root, isComplete] = checkChildAttribute(root, "fuelType1", 1, 1);
 
+  var prevCategoriesLength=0;
+  
+const categoriesToCheck=["fuelType1", "trany", "cylinders", "eng_dscr", "drive", "fuelType2", "displ"];
+let treeDepth=0;
 
+categoriesToCheck.map((attribute)=>{
+  treeDepth++;
+  if(!isComplete)
+    [root, isComplete] = checkChildAttribute(root, attribute, treeDepth-removeCounter, treeDepth);
 
-  firstRun=true;
-//constructs layer by transmission
-if(!isComplete)
-  [root, isComplete] = checkChildAttribute(root, "trany", 2-removeCounter, 2);
+  if(newCategories.length===prevCategoriesLength)
+    removeCounter++;
+  prevCategoriesLength=newCategories.length;
 
-  firstRun=true;
-//constructs layer by transmission
-if(!isComplete)
-  [root, isComplete] = checkChildAttribute(root, "cylinders", 3-removeCounter, 3);
-
-  firstRun=true;
-//constructs layer by transmission
-if(!isComplete)
-  [root, isComplete] = checkChildAttribute(root, "eng_dscr", 4-removeCounter, 4);
-
-  firstRun=true;
-//constructs layer by transmission
-if(!isComplete)
-  [root, isComplete] = checkChildAttribute(root, "drive", 5-removeCounter, 5);
-
-  firstRun=true;
-//constructs layer by transmission
-if(!isComplete)
-  [root, isComplete] = checkChildAttribute(root, "fuelType2", 6-removeCounter, 6);
+});
 
   
-  console.log(JSON.stringify(root));
+      console.log("Root at point of return: " + JSON.stringify(root));
 
 
 
@@ -227,7 +238,8 @@ async function getCarMPG(urlAppend)
     else if(data.length>1)
     {
 
-      return [data[0][mpgType], findRequiredAttribute(data), categories];
+
+      return [data[0][mpgType], findRequiredAttribute(data), newCategories];
       
     }
 

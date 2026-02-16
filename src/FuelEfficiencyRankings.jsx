@@ -19,7 +19,6 @@ export default function FuelEfficiencyRankings(){
 
     async function getMostFuelEfficientVehicles(querySuffix="")
     {
-        alert(querySuffix);
         const response = await fetch('https://rwwztvngqwunokpnrsbq.supabase.co/rest/v1/MPG?fuelType1=eq.Regular Gasoline'+querySuffix+'&order=comb08.desc', {
             method: 'GET', // Or POST, PUT, DELETE for other operations
             headers: {

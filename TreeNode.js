@@ -3,6 +3,7 @@
  //Tree Node class that holds data for differentiating cars via attributes
 export default class TreeNode {
 
+  static idCounter = 0; // Static counter to generate unique IDs for each node
 
   constructor(value, item, carsMatching=1) {
     this.value = value;
@@ -12,9 +13,17 @@ export default class TreeNode {
     this.carsMatching = carsMatching; //gets number of items matching this node (and thus its path of attribute options)
     this.children = []; //gets child nodes with further attributes used to differentiate options
     this.leaf=true;     //holds whether or not there is only one value item held by this node and thus no further attributes need to be checked.
+    this.key = TreeNode.idCounter++; // Assign a unique ID to each node
   }
 
-  
+  getKey() {
+    return this.key;
+  }
+
+  incKey(){
+    this.key++;
+  }
+
 
   addChild(item) {
     this.children.push(item);

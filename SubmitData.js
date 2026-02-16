@@ -61,6 +61,8 @@
       // Update categories if multiple vehicles found (will be null if exact match found)
       if(newCategories!=null)
       {
+        //only the categories before the one with 1 option are being shown for some reason
+        alert(JSON.stringify(newCategories));
         setCategories(newCategories);
         // If multiple vehicles found, move to next form part for dropdowns
         setFormPart(1);
